@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import logo from '@/src/assets/logo.png';
 import defaultUserImg from '@/src/assets/defaultUserImg.png';
 import kakao from '@/src/assets/kakao.png';
@@ -16,6 +17,7 @@ const KAKAO_AUTH_URL = `https://kauth.kakao.com/oauth/authorize?client_id=${
 }&redirect_uri=${import.meta.env.VITE_REDIRECT_URI}&response_type=code`;
 
 function Login() {
+  const navigate = useNavigate();
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [imageFile, setImageFile] = useState<UploadImage | null>(null);
   const [userName, setUserName] = useState<string>('');
@@ -68,7 +70,7 @@ function Login() {
   }
 
   function nicknameLoginHandler() {
-    window.location.href = 'http://localhost:5173/home';
+    navigate('/home');
   }
 
   return (
