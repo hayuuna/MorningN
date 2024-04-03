@@ -56,6 +56,9 @@ function Login() {
   }
 
   function loginHandler() {
+    if (userName === '') {
+      return;
+    }
     localStorage.setItem('user', JSON.stringify({ name: userName, image: imageFile?.thumbnail }));
     nicknameLoginHandler();
   }
