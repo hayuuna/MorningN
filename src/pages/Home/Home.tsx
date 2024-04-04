@@ -5,6 +5,7 @@ import Day from '@/src/components/Home/Day/Day';
 import Container from '@/src/components/Home/Container/Container';
 import Clothes from '@/src/components/Home/Clothes/Clothes';
 import News from '@/src/components/Home/News/News';
+import FineDust from '@/src/components/Home/FineDust/FineDust';
 
 function Home() {
   const [name, setName] = useState('');
@@ -55,9 +56,15 @@ function Home() {
         </Container>
       </S.Flex>
 
-      <Container size="small" widthRef={widthRef} heightNum={width}>
-        <Clothes />
-      </Container>
+      <S.Flex>
+        <Container size="small" widthRef={widthRef} heightNum={width}>
+          <Clothes />
+        </Container>
+
+        <Container size="small" widthRef={widthRef} heightNum={width}>
+          <FineDust />
+        </Container>
+      </S.Flex>
 
       <Container size="large">
         <News />

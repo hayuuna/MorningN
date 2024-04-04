@@ -21,7 +21,7 @@ function App() {
         <GlobalStyle />
         <S.Content
           style={{
-            backgroundColor: location.pathname === '/login' ? 'white' : '#F5F5F5',
+            backgroundColor: location.pathname === '/' ? 'white' : '#F5F5F5',
           }}
         >
           <S.Wrap>

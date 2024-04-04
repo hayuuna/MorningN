@@ -15,7 +15,11 @@
       crossorigin="anonymous"
     ></script>
     <script>
-      Kakao.init('%REACT_APP_KAKAO_JS_SDK_KEY%'); // 사용하려는 앱의 JavaScript 키 입력
+      Kakao.init('%import.meta.env.VITE_KAKAO_JS_SDK_KEY%');
     </script>
+    <script
+      type="text/javascript"
+      src="//dapi.kakao.com/v2/maps/sdk.js?appkey=%import.meta.env.VITE_KAKAO_JS_SDK_KEY%&autoload=false&libraries=services"
+    ></script>
   </body>
 </html>

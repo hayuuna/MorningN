@@ -12,9 +12,9 @@ type UploadImage = {
   type: string;
 };
 
-const KAKAO_AUTH_URL = `https://kauth.kakao.com/oauth/authorize?client_id=${
-  import.meta.env.VITE_KAKAO_CLIENT_ID
-}&redirect_uri=${import.meta.env.VITE_REDIRECT_URI}&response_type=code`;
+const KAKAO_CLIENT_ID = import.meta.env.VITE_KAKAO_CLIENT_ID;
+const REDIRECT_URI = import.meta.env.VITE_REDIRECT_URI;
+const KAKAO_AUTH_URL = `https://kauth.kakao.com/oauth/authorize?client_id=${KAKAO_CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=code`;
 
 function Login() {
   const navigate = useNavigate();

@@ -5,21 +5,25 @@ import * as S from '@/src/components/Home/Weather/styles';
 import { WeatherData } from '@/src/components/Home/Weather/types';
 import Pin from '@/src/assets/Pin.svg?react';
 import Loading from '@/src/components/Common/Loading';
-import { useRecoilState } from 'recoil';
+import { useRecoilState, useRecoilValue } from 'recoil';
 import { currentTemperature, minTemperature, maxTemperature } from '@/src/recoil/atom/temperature';
+import { currentCoordinate, currentAddress } from '@/src/recoil/atom/location';
 
 function Weather() {
   const [weatherData, setWeatherData] = useState<null | WeatherData>(null);
-  const [weatherDescKoData, setWeatherDescKoData] = useState<string>('');
-  const [Temp, setTemp] = useRecoilState<number>(currentTemperature);
-  const [minTemp, setMinTemp] = useRecoilState<number>(minTemperature);
-  const [maxTemp, setMaxTemp] = useRecoilState<number>(maxTemperature);
+  const [weatherDescKoData, setWeatherDescKoData] = useState('');
+  const [Temp, setTemp] = useRecoilState(currentTemperature);
+  const [minTemp, setMinTemp] = useRecoilState(minTemperature);
+  const [maxTemp, setMaxTemp] = useRecoilState(maxTemperature);
+  const [location, setLocation] = useRecoilState(currentCoordinate);
+  const roadAddress = useRecoilValue(currentAddress);
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition((position) => {
       const lat = position.coords.latitude;
       const lon = position.coords.longitude;
-      getWeather(lat, lon).then((weather) => {
+      setLocation({ latitude: lat, longitude: lon });
+      getWeather(location.latitude, location.longitude).then((weather) => {
         setWeatherData(weather);
       });
     });
@@ -47,7 +51,7 @@ function Weather() {
           <S.City>
             <div>
               <Pin />
-              <p>{weatherData.name}</p>
+              <p>{roadAddress.road}</p>
             </div>
             <p>{weatherDescKoData}</p>
           </S.City>

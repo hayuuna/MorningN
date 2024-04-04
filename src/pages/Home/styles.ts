@@ -4,7 +4,7 @@ export const Wrap = styled.div`
   display: flex;
   flex-direction: column;
   gap: 24px;
-  margin-top: 24px;
+  margin: 24px 0;
 `;
 
 export const Date = styled.div`
