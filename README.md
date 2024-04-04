@@ -1,6 +1,6 @@
 # MorningN v1.0
 
-## ⭐️ 서비스소개
+## ⭐️ 서비스 소개
 
 ![Morning N (1)](https://github.com/hayuuna/Yogida/assets/144312023/30a26f4e-05a8-40f0-a39d-200b6afd1e8b)
 
@@ -8,6 +8,7 @@
 
 
 프론트엔드 <img src="https://img.shields.io/badge/html5-E34F26?style=flat&logo=html5&logoColor=white"> <img src="https://img.shields.io/badge/javascript-F7DF1E?style=flat&logo=javascript&logoColor=white"> <img src="https://img.shields.io/badge/react-61DAFB?style=flat&logo=react&logoColor=white"> <img src="https://img.shields.io/badge/typescript-3178C6?style=flat&logo=typescript&logoColor=white"> <img src="https://img.shields.io/badge/styledcomponents-DB7093?style=flat&logo=styledcomponents&logoColor=white"> <img src="https://img.shields.io/badge/recoil-3578E5?style=flat&logo=recoil&logoColor=white"> <img src="https://img.shields.io/badge/yarn-2C8EBB?style=flat&logo=yarn&logoColor=white"> <img src="https://img.shields.io/badge/vite-646CFF?style=flat&logo=vite&logoColor=white">
+
 ## ⭐️ 주요 기능
 
 | ✔️ 로그인 | ✔️ 메인페이지 |
